@@ -1,0 +1,16 @@
+<div>
+    <h2>Addition</h2>
+    <p>Username: {{ username }}</p>
+ 
+    <p *ngIf="previousResult !== undefined">Previous Result: {{ previousResult }}</p>
+ 
+    <p>Result: {{ result }}</p>
+ 
+    <label for="value1">Enter value 1:</label>
+    <input type="number" id="value1" [(ngModel)]="value1" />
+    <br>
+    <label for="value2">Enter value 2:</label>
+    <input type="number" id="value2" [(ngModel)]="value2" />
+    <br>
+    <button (click)="performAddition()">Add</button>
+  </div>
