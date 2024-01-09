@@ -25,16 +25,18 @@ export class AdditionComponent implements OnInit {
  
   getUserData() {
     this.userService.getUser(this.username).subscribe(
-      (user) => {
+      {
+     next: (user) => {
         if (user) {
           this.previousResult = user.result ;
         } else {
           console.error('User not found');
         }
       },
-      (error) => {
+     error: (error) => {
         console.error('Error fetching user data:', error);
       }
+    }
     );
   }
  

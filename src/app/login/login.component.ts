@@ -16,14 +16,17 @@ export class LoginComponent {
  
   login() {
     this.userService.login({ UserName: this.username, Password: this.password }).subscribe(
-      (response) => {
+      {
+      next:(response) => {
         console.log('Login successful:', response);
-        // Navigate to the addition page
+        alert("Login success")
         this.router.navigate(['/addition', this.username]);
       },
-      (error) => {
+     error: (error) => {
         console.error('Login failed:', error);
+        alert("Login failed userName/password invalid")
       }
+    }
     );
   }
 }
